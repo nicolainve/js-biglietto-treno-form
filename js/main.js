@@ -17,7 +17,7 @@ btnGenerate.addEventListener('click', function () {
     var age = document.getElementById('age').value;
     
     if (name == '' || km == 0 || age == '') {
-        alert('Please enter')
+        alert('Inserisci dei valori appropiati')
     } else {
         var rate = 0.21;
     
