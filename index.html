@@ -10,6 +10,69 @@
 
 <body>
 
+    <div class="container">
+        
+        <h2>Calcola il prezzo del tuo biglietto</h2>
+        <section class="user-input">
+            <div class="row">
+                <div class="col">
+                    <label for="name">Nome e Cognome</label>
+                    <input type="text" id="name">
+                </di class="col">
+                    <label for="km">Km da percorrere</label>
+                    <input type="text" id="km">
+                </di class="col">
+                    <label for="età">Fascia d'età</label>
+                    <select name="" id="età">
+                        <option value="minorenne">Minorenne</option>
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="Over65">Over65</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="generate">Genera</button>
+                <button id="undo">Undo</button>
+            </div>
+        </section>
+
+        <h2>Il tuo biglietto</h2>
+        <section id="ticket">
+            
+            <div class="contents">
+                <div class="info-user">
+                    <h3>Nome Passeggero <span id="username"></span></h3>
+                </div>
+                <div class="details">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Offerta</th>
+                                <th>Carrozza</th>
+                                <th>Codice CP</th>
+                                <th>Costo biglietto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span id="offerta"></span>
+                                </td>
+                                    <span id="carrozza"></span>
+                                </td>
+                                    <span id="codice-cp"></span>
+                                </td>
+                                    <span id="costo"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <script src="./js/main.js"></script>
     
 </body>
