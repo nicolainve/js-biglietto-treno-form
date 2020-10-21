@@ -1,9 +1,3 @@
-/*
-CALCOLO BIGLIETTO TRENO
-**/
-
-// ITEMS REFERENCES
-
 var userInput = document.getElementById('user-input');
 
 var ticket = document.getElementById('ticket');
@@ -16,43 +10,48 @@ var btnBack = document.getElementById('go-back');
 
 btnGenerate.addEventListener('click', function () {
     var name = document.getElementById('name').value;
+
     
     var km = document.getElementById('km').value;
     
     var age = document.getElementById('age').value;
-
-    var rate = 0.21;
-
-    var price = km * rate;
-
-    var offer = 'Biglietto Intero';
-
-    if (age == 'minorenne') {
-        offer = 'Sconto Minorenni';
-        price -= price * 0.2;
-    } else if (age == 'Over65') {
-        offer = 'Sconto Over65';
-        price -= price * 0.4;
+    
+    if (name == '' || km == 0 || age == '') {
+        alert('Please enter')
+    } else {
+        var rate = 0.21;
+    
+        var price = km * rate;
+    
+        var offer = 'Biglietto Intero';
+    
+        if (age == 'minorenne') {
+            offer = 'Sconto Minorenni';
+            price -= price * 0.2;
+        } else if (age == 'Over65') {
+            offer = 'Sconto Over65';
+            price -= price * 0.4;
+        }
+    
+        price = price.toFixed(2); + '€';
+    
+        var carrozza = Math.floor( Math.random() * 10 ) + 1;
+    
+        var codiceCp = Math.floor( Math.random() * (10000 - 9000) ) + 9000;
+    
+        document.getElementById('username').innerHTML = name;
+    
+        document.getElementById('offerta').innerHTML = offer;
+    
+        document.getElementById('carrozza').innerHTML = carrozza;
+    
+        document.getElementById('codice-cp').innerHTML = codiceCp;
+    
+        document.getElementById('costo').innerHTML = price;
+    
+        userInput.className = 'hidden';
+        ticket.className = 'show';
     }
-
-    price = price.toFixed(2); + '€';
-
-    var carrozza = Math.floor( Math.random() * 10 ) + 1;
-
-    var codiceCp = Math.floor( Math.random() * (10000 - 9000) ) + 9000;
-
-    document.getElementById('username').innerHTML = name;
-
-    document.getElementById('offerta').innerHTML = offer;
-
-    document.getElementById('carrozza').innerHTML = carrozza;
-
-    document.getElementById('codice-cp').innerHTML = codiceCp;
-
-    document.getElementById('costo').innerHTML = price;
-
-    userInput.className = 'hidden';
-    ticket.className = 'show';
 });
 
 btnUndo.addEventListener('click', function() {
@@ -80,4 +79,10 @@ btnUndo.addEventListener('click', function() {
 btnBack.addEventListener('click', function() {
     userInput.className = 'show';
     ticket.className = 'hidden';
+
+    document.getElementById('name').value = '';
+    
+    document.getElementById('km').value = '';
+    
+    document.getElementById('age').value = '';
 })
