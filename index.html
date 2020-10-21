@@ -12,8 +12,8 @@
 
     <div class="container">
         
-        <h2>Calcola il prezzo del tuo biglietto</h2>
-        <section class="user-input">
+        <section id="user-input" class="show">
+            <h2>Calcola il prezzo del tuo biglietto</h2>
             <div class="row">
                 <div class="col">
                     <label for="name">Nome e Cognome</label>
@@ -22,8 +22,8 @@
                     <label for="km">Km da percorrere</label>
                     <input type="text" id="km">
                 </di class="col">
-                    <label for="età">Fascia d'età</label>
-                    <select name="" id="età">
+                    <label for="age">Fascia d'età</label>
+                    <select name="" id="age">
                         <option value="minorenne">Minorenne</option>
                         <option value="maggiorenne">Maggiorenne</option>
                         <option value="Over65">Over65</option>
@@ -32,13 +32,13 @@
             </div>
 
             <div class="actions">
-                <button id="generate">Genera</button>
-                <button id="undo">Undo</button>
+                <button id="btn-generate">Genera</button>
+                <button id="btn-undo">Undo</button>
             </div>
         </section>
 
-        <h2>Il tuo biglietto</h2>
-        <section id="ticket">
+        <section id="ticket" class="hidden">
+            <h2>Il tuo biglietto</h2>
             
             <div class="contents">
                 <div class="info-user">
@@ -59,10 +59,13 @@
                                 <td>
                                     <span id="offerta"></span>
                                 </td>
+                                <td>
                                     <span id="carrozza"></span>
                                 </td>
+                                <td>
                                     <span id="codice-cp"></span>
                                 </td>
+                                <td>
                                     <span id="costo"></span>
                                 </td>
                             </tr>
@@ -70,6 +73,8 @@
                     </table>
                 </div>
             </div>
+
+            <button id="go-back">Torna Indietro</button>
         </section>
     </div>
 
